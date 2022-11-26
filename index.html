@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta http-equiv="refresh" content="2" >
+    <link rel="stylesheet" href="index.css">
+    <title>気象庁防災情報</title>
+</head>
+<body>
+    <script>
+        setInterval(()=>{
+            document.querySelector('#now').textContent = new Date().toLocaleString();
+        }, 100);
+        var path='data/test.json'
+        $.getJSON(path, function(value){
+            sis=0.81 * value.temp + value.humi *0.01 * (0.99 * value.temp -14.3)+46.3
+            
+                
+                $('#before').before('<div class="contents">'+ '<p class="title">'+ '&nbsp;'+ '&nbsp;'+ '&nbsp;'+'出力数値'+'<p id=now></p>' +'</p>'+'<div class="message-area">'+ '<p class="message_1">温度: '+value.temp+ '℃<br>湿度: '+value.humi +'％<br>気圧: '+ value.press*0.01 +'hPa<br>周辺: '+ value.len+'約人<br><br>不快指数: '+sis+'<br><br>65から70未満が快適</p>' +'</div>' +'</div>');
+
+            
+        });
+        url = '/test.json'
+    $.getJSON(url , (data) => {
+    console.log(data)
+    console.log(`temp=${data.temp}, humi=${data.humi}, press=${data.press}`);
+    $('#1').text(data.temp+"℃");
+    $('#2').text(data.humi+"%");
+    $('#3').text(data.press*0.01+"hpa");
+    
+  });
+    </script>
+<script type="text/javascript">
+    function gate() {
+       var UserInput = prompt("パスワードを入力して下さい:","");
+       location.href = UserInput + ".html";
+    }
+ </script>
+ <script>
+    
+ </script>
+
+<input type="button" value="制限ページへアクセスする" onclick="gate();">
+    <div class="main-area">
+        <p class="con">周辺情報 <span class="ver">ver.1.0.0</span></p>
+            <div class="contents-area-w">
+                <p id="1"></p>
+                <div class="contents-w">
+                    <p class="title-w">　ご利用上の注意点</p>
+                    <div class="message-area-w">
+                        <p class="message_1-w">
+                            <a href="warn.html">必ずお読みください</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="contents-area">
+            <div id='before'></div>
+            </div>
+
+    </div>
+</body>
+</html>

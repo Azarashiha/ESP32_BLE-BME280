@@ -1,0 +1,72 @@
+*{
+    background-color: rgb(196, 192, 172);
+    
+    
+  }
+a{
+    background-color: rgb(193,121,102); /* 背景色 */
+    
+    color: rgb(196, 192, 172);
+}
+.main-area{
+    padding: 10px 30px 30px 30px;
+    
+}
+.con{
+    font-size: 35px;
+    text-shadow: 3px 3px 1px #999999;
+    margin: 0%;
+    padding: 10px 10px 20px 10px;
+
+}
+.ver{
+    font-size: 25px;
+}
+.contents-area{
+    
+    color: rgb(68, 68, 61);
+
+    
+}
+
+.contents{
+    padding-top: 10px;
+}
+
+.title-w{
+    color: rgb(196, 192, 172);
+    width: auto;
+    margin: 0px;
+    background-color: rgb(199, 92, 60); /* rgb(190,110,85); */
+    
+    font-size: 19px;
+}
+
+.message_1-w{
+    padding: 20px 20px;
+    color: rgb(196, 192, 172);
+    width: auto;
+    margin: 0px;
+    background-color: rgb(193,121,102); /* 背景色 */
+    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
+    
+}
+
+
+.title{
+    color: rgb(196, 192, 172);
+    width: auto;
+    margin: 0px;
+    background-color: rgb(69,69,62); /* 背景色 */
+    
+    font-size: 19px;
+}
+
+.message_1{
+    padding: 20px 20px;
+    color: rgb(69,69,62);
+    width: auto;
+    margin: 0px;
+    background-color: rgb(205,202,180); /* 背景色 */
+    box-shadow: 0 0px 20px rgba(0,0,0,0.2);
+}
